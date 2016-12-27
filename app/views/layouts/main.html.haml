@@ -19,16 +19,25 @@
               %button.button{:type => "button"} Search
         .top-bar-right
           %ul.dropdown.menu{"data-dropdown-menu" => ""}
-            %li
-              %a{:href => "#"} Upload
-            %li.has-submenu
-              %a{:href => "#"} My Account
-              %ul.submenu.menu.vertical{"data-submenu" => ""}
-                %li
-                  %a{:href => "#"} My Channel
-                %li
-                  %a{:href => "#"} My Videos
-                %li
-                  %a{:href => "#"} Settings
+            - if is_logged_in?
+              %li
+                = link_to login_path do
+                  Upload
+              %li.has-submenu
+                %a{:href => "#"} My Account
+                %ul.submenu.menu.vertical{"data-submenu" => ""}
+                  %li
+                    %a{:href => "#"} My Channel
+                  %li
+                    %a{:href => "#"} My Videos
+                  %li
+                    %a{:href => "#"} Settings
+            - else
+              %li
+                = link_to upload_path do
+                  Upload
+              %li
+                = link_to login_path do
+                  Login
 
     = yield

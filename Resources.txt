@@ -1,0 +1,9 @@
+At some point implement these things:
+- Unique page views
+  - http://stackoverflow.com/questions/16103482/how-to-track-unique-visitors-and-page-views-in-rails-without-javascript
+  
+- The will_paginate gem
+  - https://github.com/mislav/will_paginate
+  
+- Paperclip gem
+  - https://github.com/thoughtbot/paperclip

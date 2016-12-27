@@ -6,8 +6,8 @@ default: &default
 development:
   <<: *default
   database: video_tube_development
-  username: root
-  password: password!
+  # username: root
+  # password: password!
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,8 +15,8 @@ development:
 test:
   <<: *default
   database: video_tube_test
-  username: root
-  password: password!
+  # username: root
+  # password: password!
 
 production:
   <<: *default

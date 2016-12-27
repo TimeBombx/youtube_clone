@@ -8,3 +8,8 @@
 
   .tabs-content{"data-tabs-content" => "example-tabs"}
     #panel1.tabs-panel.is-active
+      - @videos.each_with_index do |u, index|
+        = render 'subscriptions/video'
+        - unless index == @videos.size - 1
+          %hr
+          

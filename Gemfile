@@ -1,18 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'mysql'
+gem 'mysql2'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
+gem 'will_paginate'
 # gem 'bootstrap-sass'
-gem 'haml'
+gem 'haml-rails'
 gem 'bcrypt', '~> 3.1.7'
 # gem 'aws-sdk', '>= 2.0.0'
 gem 'paperclip'
-gem 'foundation-rails'
+gem 'foundation-rails', "6.2.4.0"
 gem 'videojs_rails'
 
 group :development, :test do
