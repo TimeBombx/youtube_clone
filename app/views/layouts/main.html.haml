@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title Video Tube
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .top-bar
+      .row
+        .top-bar-left
+          %ul.menu
+            %li.menu-text Video Tube
+            %li
+              %input{:placeholder => "Search", :type => "search"}
+            %li
+              %button.button{:type => "button"} Search
+        .top-bar-right
+          %ul.dropdown.menu{"data-dropdown-menu" => ""}
+            %li
+              %a{:href => "#"} Upload
+            %li.has-submenu
+              %a{:href => "#"} My Account
+              %ul.submenu.menu.vertical{"data-submenu" => ""}
+                %li
+                  %a{:href => "#"} My Channel
+                %li
+                  %a{:href => "#"} My Videos
+                %li
+                  %a{:href => "#"} Settings
+
+    = yield

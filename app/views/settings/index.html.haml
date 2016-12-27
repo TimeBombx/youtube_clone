@@ -1,0 +1,9 @@
+%br
+.row
+  %ul#example-tabs.tabs{"data-tabs" => ""}
+    %li.tabs-title.is-active
+      %a{"aria-selected" => "true", :href => "#panel1"} Channel Settings
+
+  .tabs-content{"data-tabs-content" => "example-tabs"}
+    #panel1.tabs-panel.is-active
+      = form_for @settings do

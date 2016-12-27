@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require foundation
 //= require_tree .
-//= require semantic-ui
+//= require video
+
+$(function(){ $(document).foundation(); });

@@ -1,0 +1,10 @@
+%br
+.row
+  %ul#example-tabs.tabs{"data-tabs" => ""}
+    %li.tabs-title.is-active
+      %a{"aria-selected" => "true", :href => "#panel1"} Subscriptions
+    %li.tabs-title
+      %a{"aria-selected" => "true", :href => "#panel2"} Playlists
+
+  .tabs-content{"data-tabs-content" => "example-tabs"}
+    #panel1.tabs-panel.is-active
