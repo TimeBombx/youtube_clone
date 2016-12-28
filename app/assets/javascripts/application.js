@@ -17,3 +17,7 @@
 //= require video
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  $('.flashes').delay(4000).slideUp(500, "swing");
+});

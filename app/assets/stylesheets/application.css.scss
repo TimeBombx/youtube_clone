@@ -16,3 +16,24 @@
  *= require video-js
 
  */
+body {
+  background: #F0F0F3;
+}
+.login-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 15px;
+}
+
+.expand {
+  width: 100%;
+}
+
+.flashes {
+  margin-bottom: -20px;
+}
+
+.error-container {
+  padding: 5px 0px 5px 0px;
+}

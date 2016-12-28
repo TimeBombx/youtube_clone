@@ -1,2 +1,30 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+.large-3.large-centered.columns
+  .login-box
+    .row.large-12.columns
+      %h3 Signup to Video Tube
+      
+      .error-container
+        = render "shared/errors", errors: @user.errors
+      
+      = form_for @user, url: signup_path, data: {abide: ""} do |f|
+        .row.large-12.columns
+          = f.label :username, "Username"
+          = f.text_field :username#, {required: "", :pattern => "[a-zA-Z]+"}
+        .row.large-12.columns
+          = f.label :email, "Email"
+          = f.text_field :email#, {required: ""}
+        .row.large-12.columns
+          = f.label :password, "Password"
+          = f.password_field :password#, {required: ""}
+        .row.large-12.columns
+          = f.label :password_confirmation, "Confirm Password"
+          = f.password_field :password_confirmation#, {required: ""}
+        .row.large-12.large-centered.columns
+          = f.submit "Sign up", class: "button expand"
+            
+.large-3.large-centered.columns
+  .login-box
+    .row.large-12.columns
+      Already have an account? 
+      = link_to login_path do
+        Login.

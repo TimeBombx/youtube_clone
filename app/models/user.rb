@@ -1,12 +1,17 @@
 class User < ApplicationRecord
   include BCrypt
   
-  belongs_to :video
-  belongs_to :comment
+  has_many :videos
+  
+  validates_presence_of :username
+  validates_presence_of :password
+  validates_presence_of :email
+  
+  validates_uniqueness_of :username
+  
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   
   serialize :settings
-  
-  before_save :hash_password
   
   def password
     @password ||= Password.new(password_hash)

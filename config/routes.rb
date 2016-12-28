@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   root to: "subscriptions#index"
 
   get 'login', to: 'sessions#new'
-  get 'logout', to: 'sessions#destroy'
-
+  get 'signup', to: 'users#new'
+  
   get 'upload', to: 'upload#new'
+  
+  post 'signup', to: 'users#create'
+  post 'login', to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy'
 
-  resources :users do
+  resources :users, except: [:create] do
     get '/settings', to: 'users#settings'
   end
   
