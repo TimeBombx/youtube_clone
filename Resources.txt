@@ -7,3 +7,9 @@ At some point implement these things:
   
 - Paperclip gem
   - https://github.com/thoughtbot/paperclip
+  - https://github.com/ruby-av/paperclip-av-transcoder
+  - https://github.com/jrgifford/delayed_paperclip/
+  
+- Video.js
+  - https://github.com/seanbehan/videojs_rails
+  - Also checkout the other videojs gems

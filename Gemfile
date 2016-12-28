@@ -13,6 +13,8 @@ gem 'haml-rails'
 gem 'bcrypt', '~> 3.1.7'
 # gem 'aws-sdk', '>= 2.0.0'
 gem 'paperclip'
+gem 'paperclip-av-transcoder' #transcode videos for paperclip
+gem 'delayed_paperclip' #process paperclip jobs in the background
 gem 'foundation-rails', "6.2.4.0"
 gem 'videojs_rails'
 

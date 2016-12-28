@@ -21,4 +21,8 @@ class User < ApplicationRecord
     @password = Password.create(new_password)
     self.password_hash = @password
   end
+  
+  def to_param
+    username.downcase
+  end
 end

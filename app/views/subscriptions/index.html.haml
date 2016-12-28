@@ -1,15 +1,13 @@
-%br
-.row
-  %ul#example-tabs.tabs{"data-tabs" => ""}
-    %li.tabs-title.is-active
-      %a{"aria-selected" => "true", :href => "#panel1"} Subscriptions
-    %li.tabs-title
-      %a{"aria-selected" => "true", :href => "#panel2"} Playlists
+%ul#example-tabs.tabs{"data-tabs" => ""}
+  %li.tabs-title.is-active
+    %a{"aria-selected" => "true", :href => "#panel1"} Subscriptions
+  %li.tabs-title
+    %a{"aria-selected" => "true", :href => "#panel2"} Playlists
 
-  .tabs-content{"data-tabs-content" => "example-tabs"}
-    #panel1.tabs-panel.is-active
-      - @videos.each_with_index do |u, index|
-        = render 'subscriptions/video'
-        - unless index == @videos.size - 1
-          %hr
-          
+.tabs-content{"data-tabs-content" => "example-tabs"}
+  #panel1.tabs-panel.is-active
+    - @videos.each_with_index do |video, index|
+      = render 'shared/video_preview', video: video
+      - unless index == @videos.size - 1
+        %hr
+        

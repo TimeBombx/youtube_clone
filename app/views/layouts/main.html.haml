@@ -28,7 +28,7 @@
                 %a{:href => "#"} My Account
                 %ul.submenu.menu.vertical{"data-submenu" => ""}
                   %li
-                    = link_to user_path(current_user) do
+                    = link_to channel_path(current_user) do
                       = current_user.username
                   %li
                     = link_to user_settings_path(current_user) do
@@ -54,4 +54,5 @@
           %h5= flash.alert
       
   %br
-  = yield
+  .row.column
+    = yield
