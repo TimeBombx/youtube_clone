@@ -16,8 +16,13 @@ Rails.application.routes.draw do
   end
   
   resources :channel, only: [:show] do
-    get '/videos', to: 'users#videos'
-    get '/about', to: 'users#videos'
+    get '/videos', to: 'channel#videos'
+    get '/about', to: 'channel#about'
+    
+    #ajax
+    get 'subcount', to: 'channel#subcount'
+    post 'subscribe', to: 'channel#subscribe'
+    post 'unsubscribe', to: 'channel#unsubscribe'
   end
   
   resources :subscriptions

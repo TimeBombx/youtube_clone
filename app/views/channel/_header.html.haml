@@ -1,0 +1,25 @@
+.callout
+  #profile-banner
+    #banner.remove-padding
+      %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/1000x210&text=#{@user.username}"}
+
+  #profile-header
+    %h2.channel-name
+      %strong= @user.username
+    #subscribe
+      = sub_button_helper
+      .sub-count
+        .callout
+          = number_with_delimiter(@sub_count)
+
+  = channel_nav_helper
+  -# %ul#channel-nav
+    = link_to channel_path(@user) do
+      %li.selected Home
+      
+    = link_to channel_videos_path(@user) do
+      %li Videos
+        
+    = link_to channel_about_path(@user) do
+      %li About
+      
