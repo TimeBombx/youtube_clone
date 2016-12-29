@@ -1,13 +1,8 @@
-%ul#video-tabs.tabs{"data-tabs" => ""}
-  %li.tabs-title.is-active
-    %a{"aria-selected" => "true", :href => "#panel1"}= is_logged_in? ? "Subscriptions" : "Most viewed"
-  -# %li.tabs-title
-    %a{"aria-selected" => "true", :href => "#panel2"} Playlists
-
-.tabs-content{"data-tabs-content" => "video-tabs"}
-  #panel1.tabs-panel.is-active
-    - @videos.each_with_index do |video, index|
-      = render 'shared/video_preview', video: video
-      - unless index == @videos.size - 1
-        %hr
-        
+.callout
+  %h5= is_logged_in? ? "Subscriptions" : "Most viewed"
+  %hr{style: "margin: 15px -15px 20px -15px"}
+  
+  - @videos.each_with_index do |video, index|
+    = render 'shared/video_preview', video: video
+    - unless index == @videos.size - 1
+      %hr{style: "margin: 10px 0px 20px 0px"}
