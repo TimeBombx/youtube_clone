@@ -19,19 +19,21 @@ $(document).ready(function(){
 });
 
 function subUnsub(button, option) {
+  var username = button.data('user');
+  
   var response = $.post({
-    url: option
+    url: "/channel/" + username + "/" + option
   });
   
   response.done(function() {
     option = option.toLowerCase();
-    updateSubCount(button, option == "subscribe" ? "Subscribed" : "Subscribe");
+    updateSubCount(button, username, option == "subscribe" ? "Subscribed" : "Subscribe");
   });
 }
 
-function updateSubCount(button, option) {
+function updateSubCount(button, username, option) {
   var v = $.get({
-    url: 'subcount'
+    url: "/channel/" + username + '/subcount'
   });
   
   button.attr('value', option);

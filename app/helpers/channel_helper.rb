@@ -5,7 +5,7 @@ module ChannelHelper
       # classes += "alert " if is_subscribed?
       classes += "disabled " if is_viewing_self?
       value = is_subscribed? ? "Subscribed" : "Subscribe"
-      concat tag(:input, type: "button", class: classes, value: value)
+      concat tag(:input, type: "button", class: classes, value: value, data: { user: "#{@user.username}" })
     end
   end
   
