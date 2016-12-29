@@ -1,6 +1,6 @@
 %ul#video-tabs.tabs{"data-tabs" => ""}
   %li.tabs-title.is-active
-    %a{"aria-selected" => "true", :href => "#panel1"} Subscriptions
+    %a{"aria-selected" => "true", :href => "#panel1"}= is_logged_in? ? "Subscriptions" : "Most viewed"
   -# %li.tabs-title
     %a{"aria-selected" => "true", :href => "#panel2"} Playlists
 
