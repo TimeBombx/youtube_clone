@@ -15,9 +15,9 @@
               = link_to root_path do
                 Video Tube
             %li
-              %input{:placeholder => "Search", :type => "search"}
+              %input.skinny{:placeholder => "Search", :type => "search"}
             %li
-              %button.button{:type => "button"} Search
+              %button.button.skinny{:type => "button"} Search
         .top-bar-right
           %ul.dropdown.menu{"data-dropdown-menu" => ""}
             - if is_logged_in?
@@ -53,6 +53,6 @@
         .callout.small.alert
           %h5= flash.alert
 
-  %br
-  .row.column
-    = yield
+  #content
+    .row.column
+      = yield

@@ -21,6 +21,10 @@ body {
   background: #F0F0F3;
 }
 
+#content {
+  margin-top: 15px;
+}
+
 .login-box {
   background: #fff;
   border: 1px solid #ddd;
@@ -34,4 +38,17 @@ body {
 
 .error-container {
   padding: 5px 0px 5px 0px;
+}
+
+.top-bar {
+  ul {
+    li a {
+      padding: 5px 16px 5px 16px;
+    }
+  }
+}
+
+.skinny {
+  height: 30px;
+  padding: 0px 8px 0px 8px;
 }
