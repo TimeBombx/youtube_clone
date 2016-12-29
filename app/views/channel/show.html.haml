@@ -1,7 +1,7 @@
 .callout
   #profile-banner
     #banner.remove-padding
-      %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/1000x210&text=Pegasi B"}
+      %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/1000x210&text=#{@user.username}"}
 
   #profile-header
     %h2.channel-name
@@ -12,15 +12,19 @@
         .callout
           = number_with_delimiter(@sub_count)
 
-  -# TODO: channel nav bar
   %ul#channel-nav
     = link_to channel_path(@user), class: "selected" do
       %li.selected Home
       
     = link_to channel_videos_path(@user) do
-      %li
-        Videos
+      %li Videos
         
     = link_to channel_about_path(@user) do
-      %li
-        About
+      %li About
+      
+.callout
+  .row.small-up-2.medium-up-3.large-up-5
+    - @videos.each_with_index do |video, index|
+      = render 'shared/video_preview_small', video: video
+      - unless index == @videos.size - 1
+        %hr

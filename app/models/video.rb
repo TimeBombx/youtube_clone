@@ -11,6 +11,6 @@ class Video < ApplicationRecord
   end
   
   def stats
-    "#{views} views • #{time_ago_in_words(self.updated_at)} ago"
+    "#{views} views • #{time_ago_in_words(self.updated_at).gsub('about', '')} ago"
   end
 end

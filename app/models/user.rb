@@ -2,6 +2,7 @@ class User < ApplicationRecord
   include BCrypt
   
   has_many :videos
+  has_many :subscriptions
   
   validates_presence_of :username
   validates_presence_of :password

@@ -10,31 +10,59 @@
 #profile-header {
   display: inline-block;
   width:100%;
-}
-
-#profile-header .channel-name {
-  width:50%;
-  float: left;
+  
+  .channel-name {
+    width:50%;
+    float: left;
+  }
 }
 
 #subscribe {
   float: right;
-}
-
-#subscribe input {
-  margin-top: 10px;
-  float: left;
+  
+  input {
+    margin-top: 10px;
+    float: left;
+  }
 }
 
 .count {
   margin-top: 10px;
   min-width: 10px;
   float: right;
+  
+  .callout {
+    height: 40px;
+    padding: 8px;
+    text-align: right;
+    overflow: hidden;
+  }
 }
 
-.count .callout {
-  height: 40px;
-  padding: 8px;
-  text-align: right;
-  overflow: hidden;
+#channel-nav {
+  margin: 20px 0px -16px 0px;
+  
+  li {
+    margin-right: 20px;
+    padding-bottom: 5px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  
+  a li {
+    color: black;
+  }
+  
+  li:hover {
+    padding: 0px 0px 5px 0px;
+    border-bottom: 3px solid;
+    border-color: #cc181e;
+  }
+  
+  li.selected {
+    padding: 0px 0px 5px 0px;
+    border-bottom: 3px solid;
+    border-color: #cc181e;
+  }
 }

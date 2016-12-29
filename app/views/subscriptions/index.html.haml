@@ -1,10 +1,10 @@
-%ul#example-tabs.tabs{"data-tabs" => ""}
+%ul#video-tabs.tabs{"data-tabs" => ""}
   %li.tabs-title.is-active
     %a{"aria-selected" => "true", :href => "#panel1"} Subscriptions
-  %li.tabs-title
+  -# %li.tabs-title
     %a{"aria-selected" => "true", :href => "#panel2"} Playlists
 
-.tabs-content{"data-tabs-content" => "example-tabs"}
+.tabs-content{"data-tabs-content" => "video-tabs"}
   #panel1.tabs-panel.is-active
     - @videos.each_with_index do |video, index|
       = render 'shared/video_preview', video: video

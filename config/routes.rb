@@ -7,14 +7,17 @@ Rails.application.routes.draw do
   
   get 'upload', to: 'upload#new'
   
-  get 'channel/:id', to: 'users#show', as: 'channel'
-  
   post 'signup', to: 'users#create'
   post 'login', to: 'sessions#create'
   post 'logout', to: 'sessions#destroy'
 
   resources :users, except: [:create, :show] do
     get '/settings', to: 'users#settings'
+  end
+  
+  resources :channel, only: [:show] do
+    get '/videos', to: 'users#videos'
+    get '/about', to: 'users#videos'
   end
   
   resources :subscriptions
