@@ -20,4 +20,11 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
   $('.flashes').delay(4000).slideUp(500, "swing");
+
+  $('.sub-button').hover(function(){
+
+    $(this).attr('value', 'Unsubscribe')
+  }, function() {
+    $(this).attr('value', 'Subscribed')
+  });
 });

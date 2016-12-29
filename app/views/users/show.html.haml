@@ -1,8 +1,15 @@
 .callout
-  -# TODO: channel header
-  %p
-    %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/400x370&text=Pegasi B"}/
-  %p
-    %strong= @user.username
-    
-  -# TODO: channel nav bar 
+  #profile-banner
+    #banner.remove-padding
+      %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/1000x210&text=Pegasi B"}
+
+  #profile-header
+    %h2.channel-name
+      %strong= @user.username
+    #subscribe
+      %input.button.alert.sub-button{type:"button", value: "Subscribe"}
+      .count
+        .callout
+          = number_with_delimiter(0)
+
+  -# TODO: channel nav bar

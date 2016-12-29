@@ -14,20 +14,18 @@
  *= require_self
  *= require foundation_and_overrides
  *= require video-js
+ *= require channel
 
  */
 body {
   background: #F0F0F3;
 }
+
 .login-box {
   background: #fff;
   border: 1px solid #ddd;
   padding: 10px 20px 10px 20px;
   margin-bottom: 15px;
-}
-
-.expand {
-  width: 100%;
 }
 
 .flashes {

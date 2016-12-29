@@ -1,11 +1,11 @@
-.large-3.large-centered.columns
+.large-6.large-centered.columns
   .login-box
     .row.large-12.columns
       %h3 Login to Video Tube
-      
+
       .error-container
         = render "shared/errors", errors: @user.errors
-        
+
       = form_for @user, url: login_path do |f|
         .row.large-12.columns
           = f.label :username, "Username"
@@ -14,11 +14,11 @@
           = f.label :password, "Password"
           = f.password_field :password
         .row.large-12.large-centered.columns
-          = f.submit "Login", class: "button expand"
-            
-.large-3.large-centered.columns
+          = f.submit "Login", class: "button expanded"
+
+.large-6.large-centered.columns
   .login-box
     .row.large-12.columns
-      New to Video Tube? 
+      New to Video Tube?
       = link_to signup_path do
         Create an account.

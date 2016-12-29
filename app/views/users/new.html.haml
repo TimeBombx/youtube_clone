@@ -1,11 +1,11 @@
-.large-3.large-centered.columns
+.large-6.large-centered.columns
   .login-box
     .row.large-12.columns
       %h3 Signup to Video Tube
-      
+
       .error-container
         = render "shared/errors", errors: @user.errors
-      
+
       = form_for @user, url: signup_path, data: {abide: ""} do |f|
         .row.large-12.columns
           = f.label :username, "Username"
@@ -20,11 +20,11 @@
           = f.label :password_confirmation, "Confirm Password"
           = f.password_field :password_confirmation#, {required: ""}
         .row.large-12.large-centered.columns
-          = f.submit "Sign up", class: "button expand"
-            
-.large-3.large-centered.columns
+          = f.submit "Sign up", class: "button expanded"
+
+.large-6.large-centered.columns
   .login-box
     .row.large-12.columns
-      Already have an account? 
+      Already have an account?
       = link_to login_path do
         Login.

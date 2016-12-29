@@ -22,7 +22,7 @@
           %ul.dropdown.menu{"data-dropdown-menu" => ""}
             - if is_logged_in?
               %li
-                = link_to login_path do
+                = link_to upload_path do
                   Upload
               %li.has-submenu
                 %a{:href => "#"} My Account
@@ -43,16 +43,16 @@
               %li
                 = link_to login_path do
                   Login
-              
+
     - if flash.notice
-      .flashes.row
+      .flashes.row.column
         .callout.small.success
           %h5= flash.notice
     - if flash.alert
-      .flashes.row
+      .flashes.row.column
         .callout.small.alert
           %h5= flash.alert
-      
+
   %br
   .row.column
     = yield

@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
   def index
-    @videos = [Video.last]
+    @videos = Video.all
   end
 end
