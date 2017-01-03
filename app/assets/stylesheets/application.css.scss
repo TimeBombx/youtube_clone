@@ -52,3 +52,15 @@ body {
   height: 30px;
   padding: 0px 8px 0px 8px;
 }
+
+.small-input {
+  width: 35%;
+  float: left;
+  display: inline-block;
+}
+
+.unique-input {
+  width: 65%;
+  margin-left: -1px;
+  display: inline-block;
+}
