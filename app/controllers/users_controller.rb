@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by_username(params[:id])
-    @sub_count = Subscription.where(sub_id: @user.id).count
+    @sub_count = Subscription.where(channel_id: @user.id).count
   end
 
   def new

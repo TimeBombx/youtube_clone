@@ -1,8 +1,14 @@
 = render "header"
 
 .callout
+  %h4 Videos
+  %hr{style: "margin: 15px -15px 20px -15px"}
   .row.small-up-2.medium-up-3.large-up-5
     - @videos.each_with_index do |video, index|
       = render 'shared/video_preview_small', video: video
       - unless index == @videos.size - 1
         %hr
+        
+-# .callout
+  %h4 Liked
+  %hr{style: "margin: 15px -15px 20px -15px"}

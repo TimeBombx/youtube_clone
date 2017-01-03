@@ -14,7 +14,9 @@ $(document).ready(function(){
   $('.sub-button').on('click', function( event ) {
     var button = $(this);
     
-    subUnsub(button, button.attr('value').toLowerCase());
+    if (!button.hasClass('disabled')) {
+      subUnsub(button, button.attr('value').toLowerCase());
+    }
   })
 });
 

@@ -2,7 +2,7 @@ class Video < ApplicationRecord
   require 'securerandom'
   include ActionView::Helpers::DateHelper
   
-  belongs_to :user
+  belongs_to :channel
   
   before_save :generate_uid
   
@@ -12,5 +12,9 @@ class Video < ApplicationRecord
   
   def stats
     "#{views} views • #{time_ago_in_words(self.updated_at).gsub('about', '')} ago"
+  end
+  
+  def to_param
+    self.uid
   end
 end

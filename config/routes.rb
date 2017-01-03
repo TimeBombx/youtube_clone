@@ -25,5 +25,7 @@ Rails.application.routes.draw do
     post 'unsubscribe', to: 'channel#unsubscribe'
   end
   
+  resources :videos, only: [:show, :index]
+  
   resources :subscriptions
 end

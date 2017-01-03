@@ -1,0 +1,27 @@
+#video-player {
+  width: 100%;
+}
+
+.vjs-fluid {
+  width: 100% !important;
+  height: 60% !important;
+  min-width: 1000px;
+  min-height: 600px;
+}
+
+[class^="icon"] {
+}
+
+#channel-info {
+  .icon {    
+    background-image: url(https://dummyimage.com/64x64/000/fff&text=icon);
+    background-position: left center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .channel-name {
+    
+  }  
+}

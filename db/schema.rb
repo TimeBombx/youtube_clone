@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103151907) do
+ActiveRecord::Schema.define(version: 20170103192152) do
 
   create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                              null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170103151907) do
 
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
-    t.integer  "sub_id",     null: false
+    t.integer  "channel_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,17 +51,23 @@ ActiveRecord::Schema.define(version: 20170103151907) do
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "uid",                       null: false
-    t.string   "title",       limit: 100,   null: false
-    t.string   "video_loc",                 null: false
-    t.text     "description", limit: 65535, null: false
-    t.string   "thumbnail"
+    t.string   "uid",                                  null: false
+    t.string   "title",                  limit: 100,   null: false
+    t.text     "description",            limit: 65535
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
     t.integer  "views"
     t.integer  "likes"
     t.integer  "dislikes"
-    t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "channel_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
 end

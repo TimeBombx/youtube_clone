@@ -15,6 +15,7 @@
 //= require foundation
 //= require_tree .
 //= require video
+//= require video_player
 
 $(function(){ $(document).foundation(); });
 

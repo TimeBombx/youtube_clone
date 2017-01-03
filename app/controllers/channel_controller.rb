@@ -1,54 +1,48 @@
 class ChannelController < ApplicationController
   def show
-    @user = User.find_by_username(params[:id])
-    @channel = Channel.find(@user.id)
-    @sub_count = Subscription.where(sub_id: @user.id).count
-    @videos = Video.where(user_id: @user.id)
+    common
+    @videos = Video.where(channel_id: @user.id)
   end
   
   def edit
-    @user = User.find_by_username(params[:id])
-    @channel = Channel.find(@user.id)
+    common
     @settings = @user.settings
   end
   
-  def update  
-    @user = current_user
-    @channel = Channel.find(@user.id)
+  def update
+    @channel = Channel.find(params[:id])
     
     if @channel.update_attributes(settings_params)
-      redirect_to edit_channel_path(@user)
+      redirect_to edit_channel_path(@channel.user)
     else
       render 'edit'
     end
   end
   
   def videos
-    @user = User.find_by_username(params[:channel_id])
-    @sub_count = Subscription.where(sub_id: @user.id).count
-    @videos = Video.where(user_id: @user.id)
+    common
+    @videos = Video.where(channel_id: @user.id)
   end
   
   def about
-    @user = User.find_by_username(params[:channel_id])
-    @sub_count = Subscription.where(sub_id: @user.id).count
-    @videos = Video.where(user_id: @user.id)
+    common
+    @videos = Video.where(channel_id: @user.id)
   end
   
   # ajax methods
   def subscribe
     @user = User.find_by_username(params[:channel_id])
-    Subscription.create(user_id: current_user.id, sub_id: @user.id)
+    Subscription.create(user_id: current_user.id, channel_id: @user.channel.id)
   end
   
   def unsubscribe
     @user = User.find_by_username(params[:channel_id])
-    Subscription.where(user_id: current_user.id, sub_id: @user.id).destroy_all
+    Subscription.where(user_id: current_user.id, channel_id: @user.channel.id).destroy_all
   end
 
   def subcount
     @user = User.find_by_username(params[:channel_id])
-    @sub_count = Subscription.where(sub_id: @user.id).count
+    @sub_count = Subscription.where(channel_id: @user.channel.id).count
     respond_to do |format|
       format.json{render :json => @sub_count }
     end
@@ -57,5 +51,11 @@ class ChannelController < ApplicationController
   private
     def settings_params
       params.require(:channel).permit!
+    end
+    
+    def common
+      @user = User.find_by_username(params[:id] || params[:channel_id])
+      @channel = Channel.find(@user.id)
+      @sub_count = Subscription.where(channel_id: @user.channel.id).count
     end
 end

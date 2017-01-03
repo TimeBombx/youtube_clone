@@ -1,11 +1,11 @@
 module ChannelHelper
-  def sub_button_helper
+  def sub_button_helper(channel)
     capture do
       classes = "button sub-button "
       # classes += "alert " if is_subscribed?
-      classes += "disabled " if is_viewing_self?
-      value = is_subscribed? ? "Subscribed" : "Subscribe"
-      concat tag(:input, type: "button", class: classes, value: value, data: { user: "#{@user.username}" })
+      classes += "disabled " if is_viewing_self?(channel)
+      value = is_subscribed?(channel) ? "Subscribed" : "Subscribe"
+      concat tag(:input, type: "button", class: classes, value: value, data: { user: "#{channel.name}" })
     end
   end
   

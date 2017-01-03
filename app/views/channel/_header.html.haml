@@ -7,7 +7,7 @@
     %h2.channel-name
       %strong= @user.username
     #subscribe
-      = sub_button_helper
+      = sub_button_helper(@user.channel)
       .sub-count
         .callout
           = number_with_delimiter(@sub_count)

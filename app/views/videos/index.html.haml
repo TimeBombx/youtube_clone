@@ -1,0 +1,26 @@
+.callout
+  #video-player
+    %video#example_video_1.vjs-fluid.video-js.vjs-default-skin.vjs-big-play-centered{controls: "", "data-setup" => "{\"example_option\":true}", poster: "http://vjs.zencdn.net/v/oceans.png", :preload => "auto"}
+      %source{:src => "http://vjs.zencdn.net/v/oceans.mp4", :type => "video/mp4"}
+      %p.vjs-no-js
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        %a{:href => "http://videojs.com/html5-video-support/", :target => "_blank"} supports HTML5 video
+  
+  %hr{style: "margin: 15px -15px 20px -15px"}
+  %h4= @video.title
+  
+  
+  .row
+    .large-3.columns
+      %p{:style => "line-height: 20px;"}
+        %img{:src => "https://dummyimage.com/64x64/000/fff&text=icon", :style => "vertical-align: top; padding-right: 5px;"}>
+        = @video.channel.channel_name
+
+        #subscribe.float-left{style: "margin-top: -66px; margin-left: 70px;"}
+          = sub_button_helper(@video.channel)
+          .sub-count
+            .callout
+              = number_with_delimiter(@sub_count || 0)
+    .large-2.columns
+      #like-bar
+        %p{style: "text-align:right;"}= "#{@video.views} views"

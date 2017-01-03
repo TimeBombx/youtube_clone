@@ -4,7 +4,7 @@
   #video-info.large-9.columns
     %h1.title= video.title
     %p
-      = link_to channel_path(video.user) do
-        = video.user.username
+      = link_to channel_path(video.channel) do
+        = video.channel.channel_name
     %p= video.stats
     
