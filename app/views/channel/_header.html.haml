@@ -1,7 +1,7 @@
 .callout
   #profile-banner
     #banner.remove-padding
-      %img{:alt => "image of a planet called Pegasi B", :src => "http://placehold.it/1000x210&text=#{@user.username}"}
+      %img{:alt => "image of a planet called Pegasi B", :src => @channel.banner.url}
 
   #profile-header
     %h2.channel-name

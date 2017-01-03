@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    # @user = current_user
+    # @settings = @user.settings
   end
 
   def create
@@ -40,12 +41,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
-  end
-  
-  def settings
-    @user = current_user
-    @settings = @user.settings
   end
   
   private

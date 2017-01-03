@@ -1,0 +1,20 @@
+.callout
+  = form_for @channel do |f|
+    = f.label :channel_name
+    = f.text_field :name, value: @channel.name
+    
+    = f.label :unqiue_url
+    = f.text_field :disabled_prefix, disabled: "disabled", value: "http://localhost:3000/channel/", class: "small-input"
+    = f.text_field :unqiue_url, class: "unique-input", value: @channel.unqiue_url
+    
+    = f.label :description
+    = f.text_area :description, style: "height: 100px;", value: @channel.description
+    
+    = f.label :channel_baner
+    - if @channel.banner.file?
+      #banner
+        %img{src: @channel.banner.url}
+      %br
+    = f.file_field :banner
+    
+    = f.submit "Update", class: "button", style: "margin-bottom: 0px;"

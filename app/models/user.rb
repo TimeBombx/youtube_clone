@@ -4,6 +4,10 @@ class User < ApplicationRecord
   has_many :videos
   has_many :subscriptions
   
+  has_one :channel
+  
+  after_save :create_channel
+  
   validates_presence_of :username
   validates_presence_of :password
   validates_presence_of :email
@@ -25,5 +29,12 @@ class User < ApplicationRecord
   
   def to_param
     username.downcase
+  end
+  
+  def create_channel
+    channel = Channel.new
+    channel.name = self.username
+    channel.user_id = self.id
+    channel.save!
   end
 end
