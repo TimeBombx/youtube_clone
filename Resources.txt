@@ -9,6 +9,7 @@ At some point implement these things:
   - https://github.com/thoughtbot/paperclip
   - https://github.com/ruby-av/paperclip-av-transcoder
   - https://github.com/jrgifford/delayed_paperclip/
+    - https://github.com/resque/resque
   
 - Video.js
   - https://github.com/seanbehan/videojs_rails

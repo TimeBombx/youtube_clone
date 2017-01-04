@@ -20,6 +20,7 @@ gem 'foundation-rails', "6.2.4.0"
 gem 'videojs_rails'
 
 group :development, :test do
+  gem 'rspec'
   gem 'pry-rails'
   gem 'byebug', platform: :mri
 end
