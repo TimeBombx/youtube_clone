@@ -1,7 +1,12 @@
 .callout
   #profile-banner
     #banner.remove-padding
-      %img{:alt => "image of a planet called Pegasi B", :src => @channel.banner.url}
+      - if @channel.banner.url(:best).include?('missing')
+        - image = "https://dummyimage.com/1168x260/000/fff&text=#{@channel.channel_name}"
+      - else
+        - image = @channel.banner.url(:best)
+        
+      %img{:alt => "channel banner", :src => image}
 
   #profile-header
     %h2.channel-name

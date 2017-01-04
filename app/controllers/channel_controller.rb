@@ -1,33 +1,28 @@
 class ChannelController < ApplicationController
+  before_filter :common
   before_filter :user_logged_in, only: [:edit, :update]
   
   def show
-    common
     @videos = Video.where(channel_id: @channel.id)
   end
   
   def edit
-    common
     @settings = @channel.user.settings
   end
   
   def update
-    @channel = Channel.find(params[:id])
-    
     if @channel.update_attributes(settings_params)
-      redirect_to edit_channel_path(@channel.user)
+      redirect_to edit_channel_path(@channel)
     else
       render 'edit'
     end
   end
   
   def videos
-    common
     @videos = Video.where(channel_id: @channel.id)
   end
   
   def about
-    common
     @videos = Video.where(channel_id: @channel.id)
   end
   

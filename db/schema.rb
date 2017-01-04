@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104141557) do
+ActiveRecord::Schema.define(version: 20170104192618) do
 
   create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                              null: false
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20170104141557) do
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "uid",                                  null: false
-    t.string   "title",                  limit: 100,   null: false
+    t.string   "uid",                                                                  null: false
+    t.string   "title",                                default: "default video title", null: false
     t.text     "description",            limit: 65535
     t.string   "video_file_name"
     t.string   "video_content_type"
@@ -63,12 +63,13 @@ ActiveRecord::Schema.define(version: 20170104141557) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
-    t.integer  "views"
-    t.integer  "likes"
-    t.integer  "dislikes"
+    t.integer  "views",                                default: 0
+    t.integer  "likes",                                default: 0
+    t.integer  "dislikes",                             default: 0
     t.integer  "channel_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "video_meta"
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
   end
 
 end

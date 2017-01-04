@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   get 'signup', to: 'users#new'
   
-  get 'uploads', to: 'uploads#new'
+  get 'uploads', to: 'videos#new'
   
   post 'signup', to: 'users#create'
   post 'login', to: 'sessions#create'
@@ -25,7 +25,6 @@ Rails.application.routes.draw do
     post 'unsubscribe', to: 'channel#unsubscribe'
   end
   
-  resources :videos, only: [:show, :index]
-  
+  resources :videos
   resources :subscriptions
 end

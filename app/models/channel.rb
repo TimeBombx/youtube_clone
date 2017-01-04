@@ -2,7 +2,7 @@ class Channel < ApplicationRecord
   has_many :videos
   belongs_to :user
   
-  has_attached_file :banner, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/channel/banner/:style/missing.png"
+  has_attached_file :banner, styles: { best: "1168x260>" }
   validates_attachment :banner, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   
   def channel_name

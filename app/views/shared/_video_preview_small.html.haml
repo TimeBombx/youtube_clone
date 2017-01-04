@@ -1,5 +1,10 @@
 .column
-  %img.thumbnail{:alt => "", :src => "https://dummyimage.com/256x144/000/fff&text=#{video.title[0..4]}"}
-  %h5.title= video.title
+  = link_to video_path(video) do
+    - if video.video.url(:thumb_small).include?('missing')
+      - image = "https://dummyimage.com/1168x260/000/fff&text=#{@channel.channel_name}"
+    - else
+      - image = video.video.url(:thumb_small)
+    %img.thumbnail{:alt => "", :src => image}
+    %h5.title= video.title
   %p= video.stats
     

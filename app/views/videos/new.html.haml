@@ -1,0 +1,9 @@
+.callout
+  %h5 Upload
+  %hr{style: "margin: 15px -15px 20px -15px"}
+  
+  = form_for @video do |f|
+    = f.file_field :video
+    = f.hidden_field :channel_id, value: current_user.channel.id
+    
+    = f.submit 'Upload', class: 'button remove-padding', style: 'margin-bottom: 0px;'
