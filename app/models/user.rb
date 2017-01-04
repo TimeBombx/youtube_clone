@@ -35,6 +35,7 @@ class User < ApplicationRecord
     channel = Channel.new
     channel.name = self.username
     channel.user_id = self.id
+    channel.unqiue_url = self.username
     channel.save!
   end
 end

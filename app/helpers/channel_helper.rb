@@ -11,9 +11,9 @@ module ChannelHelper
   
   def channel_nav_helper
     nav_options = {
-      home: channel_path(@user), 
-      videos: channel_videos_path(@user), 
-      about: channel_about_path(@user)
+      home: channel_path(@channel), 
+      videos: channel_videos_path(@channel), 
+      about: channel_about_path(@channel)
     }
     
     capture do

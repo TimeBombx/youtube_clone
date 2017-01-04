@@ -28,10 +28,10 @@
                 %a{:href => "#"} My Account
                 %ul.submenu.menu.vertical{"data-submenu" => ""}
                   %li
-                    = link_to channel_path(current_user) do
+                    = link_to channel_path(current_user.channel.unqiue_url) do
                       Channel
                   %li
-                    = link_to edit_channel_path(current_user) do
+                    = link_to edit_channel_path(current_user.channel.unqiue_url) do
                       Settings
                   %li
                     = link_to logout_path, method: :post do

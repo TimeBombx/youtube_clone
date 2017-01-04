@@ -6,6 +6,7 @@ module SubscriptionsHelper
   end
   
   def is_viewing_self?(channel)
+    return false if !is_logged_in?
     current_user.channel == channel
   end
 end

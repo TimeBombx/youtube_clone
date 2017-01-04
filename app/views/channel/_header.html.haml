@@ -5,9 +5,9 @@
 
   #profile-header
     %h2.channel-name
-      %strong= @user.username
+      %strong= @channel.channel_name
     #subscribe
-      = sub_button_helper(@user.channel)
+      = sub_button_helper(@channel)
       .sub-count
         .callout
           = number_with_delimiter(@sub_count)

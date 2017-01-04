@@ -8,4 +8,8 @@ class Channel < ApplicationRecord
   def channel_name
     unqiue_url || name
   end
+  
+  def to_param
+    channel_name
+  end
 end

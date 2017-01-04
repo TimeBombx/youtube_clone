@@ -1,12 +1,14 @@
 class ChannelController < ApplicationController
+  before_filter :user_logged_in, only: [:edit, :update]
+  
   def show
     common
-    @videos = Video.where(channel_id: @user.id)
+    @videos = Video.where(channel_id: @channel.id)
   end
   
   def edit
     common
-    @settings = @user.settings
+    @settings = @channel.user.settings
   end
   
   def update
@@ -21,12 +23,12 @@ class ChannelController < ApplicationController
   
   def videos
     common
-    @videos = Video.where(channel_id: @user.id)
+    @videos = Video.where(channel_id: @channel.id)
   end
   
   def about
     common
-    @videos = Video.where(channel_id: @user.id)
+    @videos = Video.where(channel_id: @channel.id)
   end
   
   # ajax methods
@@ -54,8 +56,16 @@ class ChannelController < ApplicationController
     end
     
     def common
-      @user = User.find_by_username(params[:id] || params[:channel_id])
-      @channel = Channel.find(@user.id)
-      @sub_count = Subscription.where(channel_id: @user.channel.id).count
+      @channel = Channel.find_by_unqiue_url(params[:id] || params[:channel_id])
+      @sub_count = Subscription.where(channel_id: @channel.id).count
+    end
+    
+    def user_logged_in
+      @channel = Channel.find_by_unqiue_url(params[:id] || params[:channel_id])
+      
+      if current_user != @channel.user
+        flash.alert = "You do not have access to that page!"
+        redirect_to root_path
+      end
     end
 end
