@@ -1,6 +1,14 @@
 //= require video
-$(document).ready(function(){
-  videojs('example_video_1').ready(function(){
+$(document).ready(function() {
+  var video;
+  
+  try {
+    video = videojs('example_video_1');
+  } catch (err) {
+    return;
+  }
+  
+  video.ready(function(){
     this.on('timeupdate', function() {
       var myPlayer = this;
       

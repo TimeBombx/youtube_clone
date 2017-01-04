@@ -9,7 +9,6 @@
   %hr{style: "margin: 15px -15px 20px -15px"}
   %h4= @video.title
   
-  
   .row
     .large-3.columns
       %p{:style => "line-height: 20px;"}
@@ -24,3 +23,6 @@
     .large-2.columns
       #like-bar
         %p{style: "text-align:right;"}= "#{@video.views} views"
+        
+  .row.column
+    %a.button.hollow.expanded{style: "margin-bottom: 5px;"} Show description
