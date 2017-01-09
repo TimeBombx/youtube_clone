@@ -14,3 +14,6 @@ At some point implement these things:
 - Video.js
   - https://github.com/seanbehan/videojs_rails
   - Also checkout the other videojs gems
+  
+- Dropzone for video uploading/progress
+  - https://github.com/ncuesta/dropzonejs-rails
