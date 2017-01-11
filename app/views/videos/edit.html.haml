@@ -1,0 +1,23 @@
+.callout
+  .callout.small.primary
+    %p
+      - if @video.video_processing?
+        Video will be available at 
+      - else 
+        Video is be available at 
+      = link_to video_path(@video) do
+        = video_url(@video)
+
+  - if @video.video_processing?
+    #status-container
+      Uploading
+    %progress{:max => "100", :value => "0"}
+
+  = form_for @video do |f|
+    = f.label :title
+    = f.text_field :title
+    
+    = f.label :description
+    = f.text_area :description
+    
+    = f.submit "Save changes", class: "button"

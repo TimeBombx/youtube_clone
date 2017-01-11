@@ -16,8 +16,10 @@ gem 'paperclip'
 gem 'paperclip-av-transcoder' #transcode videos for paperclip
 gem "paperclip-ffmpeg"
 gem 'delayed_paperclip' #process paperclip jobs in the background
+gem 'delayed_job_active_record'
 gem 'foundation-rails', "6.2.4.0"
 gem 'videojs_rails'
+gem 'jquery-fileupload-rails'
 
 group :development, :test do
   gem 'rspec'

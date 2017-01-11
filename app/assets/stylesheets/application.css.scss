@@ -14,11 +14,23 @@
  *= require_self
  *= require foundation_and_overrides
  *= require video-js
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  *= require channel
+*/
 
- */
 body {
   background: #F0F0F3;
+}
+
+// drop down fix
+.submenu {
+  margin-top: 12px;
+}
+
+.submenu li {
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 #content {
@@ -30,6 +42,10 @@ body {
   border: 1px solid #ddd;
   padding: 10px 20px 10px 20px;
   margin-bottom: 15px;
+}
+
+textarea {
+  height: 150px;
 }
 
 .flashes {
@@ -63,4 +79,28 @@ body {
   width: 65%;
   margin-left: -1px;
   display: inline-block;
+}
+
+.file-upload {
+  position: relative;
+  // overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.file-upload input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+  filter: alpha(opacity=0);
+}
+
+::-webkit-file-upload-button { cursor:pointer; }
+
+.button {
+  margin-bottom: 5px;
 }

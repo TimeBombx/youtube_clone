@@ -10,11 +10,20 @@ class VideosController < ApplicationController
   def create
     @video = Video.create(video_params)
     
-    if @video.save
-      redirect_to video_path(@video)
-    else
-      
+    if @video.save!
+      redirect_to edit_video_path(@video)
     end
+  end
+  
+  def edit
+    @video = Video.find_by(uid: params[:id])
+    # binding.pry
+  end
+  
+  def update
+  end
+  
+  def status
   end
   
   private

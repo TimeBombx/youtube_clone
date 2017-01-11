@@ -13,11 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery-fileupload
 //= require_tree .
 //= require video
 
-$(function(){ $(document).foundation(); });
-
-$(document).ready(function(){
+ready = function() {
+  $(document).foundation();
+  
   $('.flashes').delay(4000).slideUp(500, "swing");
-});
+  
+  $('.button.file-upload').click(function(){
+    $('.file-input').click();
+  });
+  
+  loadVideo();
+  submitForm();
+  uploadProgressBar();
+}
+
+$(document).ready(ready);
